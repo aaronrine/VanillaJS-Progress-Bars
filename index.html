@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="progressBar.js"></script>
+    <script>
+        
+        function handleInput(value) {
+            let progressBars = document.querySelectorAll(".progressbar")
+            progressBars.forEach(progressBar => {
+                progressBar.dataset.current = value
+                render(progressBar)
+            })
+        }
+    </script>
+</head>
+<body>
+    <input type="range" min="0" max="100" value="50" oninput="handleInput(this.value)">
+    <section class="horizontal-container">
+        <h1>Horizontal Progress Bars</h1>
+        <div class="progressbar horizontal" data-max="100" data-current="50"></div>
+    </section>
+    <section class="vertical-container">
+        <h1>Vertical Progress Bars</h1>
+        <div>
+            <div class="progressbar vertical" data-max="100" data-current="50"></div>
+        </div>
+    </section>
+    <section class="curved-container">
+        <h1>Curved Progress Bars</h1>
+        <div class="progressbar curved" data-max="100" data-current="50"></div>
+    </section>
+</body>
+
+</html>
